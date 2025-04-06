@@ -27,20 +27,22 @@ document.addEventListener("DOMContentLoaded",function(){
         initalwin2++;
         wins2.textContent=initalwin2;
       }
-      else if(currentsymbol=="0"){
+      else {
         initialwin1++;
         wins1.textContent=initialwin1;
       }
-      else {
-        initialwin1++;
-        initalwin2++;
-      }
-
-      }
+    
       gameover=true;
     }
     else{
+      const allfiled=[...usernameInput].every(cell=> cell.textContent);
+      if(allfiled){
+        alert("It's a draw!");
+        gameover=true;
+      }
+      else{
       currentsymbol=currentsymbol==="X"?"0":"X";
+      }
     }
   }
   });
