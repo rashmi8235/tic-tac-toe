@@ -23,13 +23,19 @@ document.addEventListener("DOMContentLoaded",function(){
     if(!button.textContent&&!gameover){
       button.textContent=currentsymbol;
       if(check(currentsymbol)){
-        if(currentsymbol==="X"){
+        if(currentsymbol=="X"){
         initalwin2++;
         wins2.textContent=initalwin2;
       }
-      else{
+      else if(currentsymbol=="0"){
         initialwin1++;
         wins1.textContent=initialwin1;
+      }
+      else {
+        initialwin1++;
+        initalwin2++;
+      }
+
       }
       gameover=true;
     }
